@@ -3,7 +3,7 @@ package com.manga.pokemonservice.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.manga.pokemonService.model.Pokemon;
-import com.manga.pokemonservice.DAO.PokemonDao;
+import com.manga.pokemonservice.repository.PokemonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -25,11 +25,11 @@ public class PokemonController {
     private String jmsQueue;
 
     @Autowired
-    private PokemonDao pokemonDao;
+    private PokemonRepository pokemonRepository;
 
     @GetMapping(value = "/sendToPokedex/{id}")
     public ResponseEntity<Pokemon> sendToPokedex(@PathVariable int id) {
-        Optional<Pokemon> pokemon = pokemonDao.findById(id);
+        Optional<Pokemon> pokemon = pokemonRepository.findById(id);
         if (!pokemon.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -47,21 +47,21 @@ public class PokemonController {
 
     @GetMapping(value = "/{id}")
     public Pokemon getPokemon(@PathVariable int id) {
-        return pokemonDao.getOne(id);
+        return pokemonRepository.getOne(id);
     }
 
     @GetMapping(value = "/all")
     public List<Pokemon> getAll() {
-        return pokemonDao.findAll();
+        return pokemonRepository.findAll();
     }
 
     @PostMapping(value = "/addOne")
     public Pokemon save(@RequestBody Pokemon pokemon) {
-        return pokemonDao.save(pokemon);
+        return pokemonRepository.save(pokemon);
     }
 
     @PostMapping(value = "/addList")
     public List<Pokemon> save(@RequestBody List<Pokemon> listPokemon) {
-        return pokemonDao.saveAll(listPokemon);
+        return pokemonRepository.saveAll(listPokemon);
     }
 }

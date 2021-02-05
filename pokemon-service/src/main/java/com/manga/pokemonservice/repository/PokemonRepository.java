@@ -1,10 +1,10 @@
-package com.manga.pokemonservice.DAO;
+package com.manga.pokemonservice.repository;
 
 import com.manga.pokemonService.model.Pokemon;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PokemonDao extends JpaRepository<Pokemon,Integer> {
+public interface PokemonRepository extends JpaRepository<Pokemon,Integer> {
 
 }

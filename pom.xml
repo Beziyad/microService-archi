@@ -12,5 +12,6 @@
         <module>pokedex-service</module>
         <module>api-gateway</module>
         <module>discovery-server</module>
+        <module>security-service</module>
     </modules>
 </project>

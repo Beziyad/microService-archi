@@ -1,0 +1,1 @@
+INSERT INTO USER_CRED(username,password) VALUES('admin','admin')
