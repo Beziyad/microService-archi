@@ -20,7 +20,7 @@ spring:
         - id: security-service
           uri: lb://SECURITY-SERVICE
           predicates:
-            - Path=/login/**
+            - Path=/oauth/**
 eureka:
   instance:
     appname: ${spring.application.name}

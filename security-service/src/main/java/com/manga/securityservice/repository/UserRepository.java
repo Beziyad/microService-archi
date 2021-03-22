@@ -1,8 +1,9 @@
 package com.manga.securityservice.repository;
 
-import com.manga.securityservice.model.UserCred;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.manga.securityservice.model.UserInfo;
+import org.springframework.data.repository.CrudRepository;
 
-public interface UserRepository extends JpaRepository<UserCred, Long> {
-    UserCred findUserByUsername(String username);
+public interface UserRepository extends CrudRepository<UserInfo, Long> {
+    UserInfo findByUsername(String username);
+
 }

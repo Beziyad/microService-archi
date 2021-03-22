@@ -1,1 +1,1 @@
-INSERT INTO USER_CRED(username,password) VALUES('admin','$2y$12$IeQb.R16jUyGqfnPab344edVtpKjbSClslOyF.9aBZL1q1Cqubt8C')
+INSERT INTO USER_INFO(username, passwordhash, role) values ('admin', '$2a$10$LeoOqGsAv8wOMEE2XYWJiueXRkvBtTfq2lxE/vuGFfQKLVP8aytca', 'ADMIN');
