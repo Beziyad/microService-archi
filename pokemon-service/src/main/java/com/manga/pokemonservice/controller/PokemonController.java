@@ -2,7 +2,7 @@ package com.manga.pokemonservice.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.manga.pokemonservice.DAO.PokemonDao;
+import com.manga.pokemonservice.dao.PokemonDao;
 import com.manga.pokemonservice.model.Pokemon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,7 +12,6 @@ import org.springframework.jms.core.JmsTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/pokemon")
@@ -29,11 +28,11 @@ public class PokemonController {
 
     @GetMapping(value = "/sendToPokedex/{id}")
     public ResponseEntity<Pokemon> sendToPokedex(@PathVariable int id) {
-        Optional<Pokemon> pokemon = pokemonDao.findById(id);
+        var pokemon = pokemonDao.findById(id);
         if (!pokemon.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        ObjectMapper mapper = new ObjectMapper();
+        var mapper = new ObjectMapper();
         String json = null;
         try {
             json = mapper.writeValueAsString(pokemon.get());

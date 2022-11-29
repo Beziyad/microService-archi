@@ -1,4 +1,4 @@
-package com.manga.pokedexservice.Dao;
+package com.manga.pokedexservice.dao;
 
 import com.manga.pokedexservice.model.Pokemon;
 import org.springframework.data.jpa.repository.JpaRepository;

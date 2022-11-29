@@ -1,6 +1,6 @@
 package com.manga.pokedexservice.controller;
 
-import com.manga.pokedexservice.Dao.PokemonDao;
+import com.manga.pokedexservice.dao.PokemonDao;
 import com.manga.pokedexservice.model.Pokemon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

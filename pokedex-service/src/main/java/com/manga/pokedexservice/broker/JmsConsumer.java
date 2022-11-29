@@ -2,7 +2,7 @@ package com.manga.pokedexservice.broker;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.manga.pokedexservice.Dao.PokemonDao;
+import com.manga.pokedexservice.dao.PokemonDao;
 import com.manga.pokedexservice.model.Pokemon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
