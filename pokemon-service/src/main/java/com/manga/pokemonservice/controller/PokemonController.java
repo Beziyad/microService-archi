@@ -2,8 +2,8 @@ package com.manga.pokemonservice.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.manga.pokemonService.model.Pokemon;
 import com.manga.pokemonservice.DAO.PokemonDao;
+import com.manga.pokemonservice.model.Pokemon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
