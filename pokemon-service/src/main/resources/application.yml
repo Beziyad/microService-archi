@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: pokemon-service
+  activemq:
+    user: admin
+    password: admin
+    broker-url: tcp://localhost:61616
+  jpa:
+    show-sql: 'true'
+  datasource:
+    password: password
+    username: SA
+    url: jdbc:h2:mem:AZ
+  h2:
+    console:
+      enabled: 'true'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka
+    fetch-registry: 'true'
+  instance:
+    appname: ${spring.application.name}
+server:
+  port: '8090'
+pokemon:
+  jms:
+    destination: pokemon
